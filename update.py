@@ -11,8 +11,8 @@ import iso8601
 import textwrap
 from lxml import etree
 
-MANIFEST = 'io.dbeaver.DBeaverCommunity.yml'
-APPDATA = 'io.dbeaver.DBeaverCommunity.appdata.xml'
+MANIFEST = 'com.dbeaver.DBeaverEnterprise.yml'
+APPDATA = 'com.dbeaver.DBeaverEnterprise.appdata.xml'
 
 
 def parse_notes(notes):
@@ -102,7 +102,8 @@ tree.write(APPDATA, encoding="utf-8", xml_declaration=True)
 os.remove(FILENAME)
 
 print('Running xml validation')
-subprocess.run(['org.freedesktop.appstream-glib', 'validate', 'io.dbeaver.DBeaverCommunity.appdata.xml'])
+subprocess.run(['org.freedesktop.appstream-glib', 'validate',
+                'com.dbeaver.DBeaverEnterprise.appdata.xml'])
 
 print()
 print("Update done. New version: " + VERSION)

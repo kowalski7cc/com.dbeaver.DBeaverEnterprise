@@ -1,4 +1,4 @@
-app-id: io.dbeaver.DBeaverCommunity
+app-id: com.dbeaver.DBeaverEnterprise
 runtime: org.gnome.Platform
 runtime-version: '3.38'
 sdk: org.gnome.Sdk
@@ -17,7 +17,7 @@ finish-args:
   - "--filesystem=home"
   - "--env=PATH=/app/clients/bin:/app/jre/bin:/usr/bin"
 add-extensions:
-  io.dbeaver.DBeaverCommunity.Client:
+  com.dbeaver.DBeaverEnterprise.Client:
     directory: clients
     add-ld-path: lib
     merge-dirs: bin
@@ -36,23 +36,23 @@ modules:
       - rm -rf dbeaver.tar.gz
       - cp -r dbeaver_unpack/dbeaver /app
       - install -d /app/clients/bin
-      - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=WM_CLASS /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=Categories /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=Keywords /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=GenericName /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=GenericName --set-value='Database Manager;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=MimeType /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=Path /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --remove-key=Exec /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-key=Exec --set-value='/app/dbeaver/dbeaver' /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - desktop-file-edit --set-icon=io.dbeaver.DBeaverCommunity /app/share/applications/io.dbeaver.DBeaverCommunity.desktop
-      - install -Dm644 io.dbeaver.DBeaverCommunity.appdata.xml /app/share/metainfo/io.dbeaver.DBeaverCommunity.appdata.xml
+      - install -Dm644 dbeaver_unpack/dbeaver/dbeaver.desktop /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=WM_CLASS /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=Categories /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-key=Categories --set-value='IDE;Development;' /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=Keywords /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-key=Keywords --set-value='Database;SQL;IDE;JDBC;ODBC;MySQL;PostgreSQL;' /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=GenericName /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-key=GenericName --set-value='Database Manager;' /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=MimeType /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-key=MimeType --set-value='application/sql;' /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=Path /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --remove-key=Exec /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-key=Exec --set-value='/app/dbeaver/dbeaver' /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - desktop-file-edit --set-icon=com.dbeaver.DBeaverEnterprise /app/share/applications/com.dbeaver.DBeaverEnterprise.desktop
+      - install -Dm644 com.dbeaver.DBeaverEnterprise.appdata.xml /app/share/metainfo/com.dbeaver.DBeaverEnterprise.appdata.xml
       - for icon_size in 16 32 48 64 128 256 512; do install -d /app/share/icons/hicolor/${icon_size}x${icon_size}/apps;
-        install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/io.dbeaver.DBeaverCommunity.png;
+        install -m644 icon_${icon_size}x${icon_size}.png /app/share/icons/hicolor/${icon_size}x${icon_size}/apps/com.dbeaver.DBeaverEnterprise.png;
         done
     sources:
       - type: file
@@ -77,10 +77,10 @@ modules:
         url: https://raw.githubusercontent.com/dbeaver/dbeaver/devel/product/standalone/icons-sources/icon_512x512.png
         sha256: f8ab6c3cf98cc239a050334313c06eed78b7e5703427bc22410e66dc211ddb43
       - type: file
-        path: io.dbeaver.DBeaverCommunity.appdata.xml
+        path: com.dbeaver.DBeaverEnterprise.appdata.xml
       - type: file
         dest-filename: dbeaver.tar.gz
         only-arches:
           - x86_64
-        url: https://github.com/dbeaver/dbeaver/releases/download/7.3.4/dbeaver-ce-7.3.4-linux.gtk.x86_64.tar.gz
-        sha256: af5738bbb7a58480b9e995a91e0351521f0f75e6733fece90b468015f8259795
+        url: https://download.dbeaver.com/enterprise/7.3.0/dbeaver-ee-7.3.0-linux.gtk.x86_64.tar.gz
+        sha256: dad425acd9baf791b723386a15be29e9f902c747460166455654c5915a9e7827

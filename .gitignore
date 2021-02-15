@@ -4,3 +4,6 @@ repo
 _build
 venv
 .vscode
+*.flatpak
+
+*.gpg

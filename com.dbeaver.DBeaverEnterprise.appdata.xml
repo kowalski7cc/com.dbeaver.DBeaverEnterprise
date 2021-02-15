@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<component type="desktop">
+    <id>com.dbeaver.DBeaverEnterprise</id>
+    <launchable type="desktop-id">com.dbeaver.DBeaverEnterprise.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
+    <name>DBeaver Enterprise</name>
+    <url type="homepage">https://dbeaver.com/</url>
+    <url type="bugtracker">https://github.com/dbeaver/dbeaver/issues/</url>
+    <summary>Enterprise Database Manager.</summary>
+    <description>
+        <p>Enterprise multi-platform database tool for developers, SQL programmers, database administrators and analysts. Supports all popular databases: MySQL, PostgreSQL, MariaDB, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, etc.</p>
+        <p>This is an unofficial build of DBeaver, packaged into a Flatpak. This repackaging is not supported by DBeaver Enterprise Edition.</p>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://dbeaver.io/product/dbeaver-ss-classic.png</image>
+            <caption>General UI</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://dbeaver.io/product/dbeaver-ss-erd.png</image>
+            <caption>Diagrams</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="7.3.0" date="2020-12-07">
+            <description>
+                <p>Release of version: 7.3.0</p>
+            </description>
+            <url>https://dbeaver.com/release-notes/7-3-0/</url>
+        </release>
+        <release version="7.2.0" date="2020-09-07">
+            <description>
+                <p>Release of version: 7.2.0</p>
+            </description>
+            <url>https://dbeaver.com/release-notes/7-2-0/</url>
+        </release>
+    </releases>
+    <content_rating type="oars-1.1" />
+</component>
